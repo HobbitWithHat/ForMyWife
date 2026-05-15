@@ -1,0 +1,10 @@
+images {
+  image: "/assets/placeholder/Eingang.png"
+}
+images {
+  image: "/assets/placeholder/Objekt.png"
+}
+images {
+  image: "/assets/placeholder/Spieler.png"
+}
+extrude_borders: 2
