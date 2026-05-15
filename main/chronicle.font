@@ -1,0 +1,5 @@
+font: "/assets/fonts/bionicle.otf"
+material: "/builtins/fonts/debug/always_on_top_font.material"
+size: 36
+all_chars: true
+characters: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
