@@ -8,6 +8,15 @@ instances {
     z: 1.0
   }
 }
+instances {
+  id: "Stick"
+  prototype: "/Objects/Stick.go"
+  position {
+    x: 168.0
+    y: 88.0
+    z: 0.1
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "camera"
@@ -26,74 +35,6 @@ embedded_instances {
   position {
     x: 200.0
     y: 120.0
-  }
-}
-embedded_instances {
-  id: "cursor"
-  data: "components {\n"
-  "  id: \"cursor\"\n"
-  "  component: \"/in/cursor.script\"\n"
-  "  properties {\n"
-  "    id: \"drag\"\n"
-  "    value: \"false\"\n"
-  "    type: PROPERTY_TYPE_BOOLEAN\n"
-  "  }\n"
-  "  properties {\n"
-  "    id: \"acquire_input_focus\"\n"
-  "    value: \"true\"\n"
-  "    type: PROPERTY_TYPE_BOOLEAN\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"sprite\"\n"
-  "  type: \"sprite\"\n"
-  "  data: \"default_animation: \\\"logo\\\"\\n"
-  "material: \\\"/builtins/materials/sprite.material\\\"\\n"
-  "textures {\\n"
-  "  sampler: \\\"texture_sampler\\\"\\n"
-  "  texture: \\\"/main/main.atlas\\\"\\n"
-  "}\\n"
-  "\"\n"
-  "  position {\n"
-  "    z: 1.0\n"
-  "  }\n"
-  "  scale {\n"
-  "    x: 0.1\n"
-  "    y: 0.1\n"
-  "    z: 0.1\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"collisionobject\"\n"
-  "  type: \"collisionobject\"\n"
-  "  data: \"type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
-  "mass: 0.0\\n"
-  "friction: 0.1\\n"
-  "restitution: 0.5\\n"
-  "group: \\\"cursor\\\"\\n"
-  "mask: \\\"interact\\\"\\n"
-  "embedded_collision_shape {\\n"
-  "  shapes {\\n"
-  "    shape_type: TYPE_SPHERE\\n"
-  "    position {\\n"
-  "    }\\n"
-  "    rotation {\\n"
-  "    }\\n"
-  "    index: 0\\n"
-  "    count: 1\\n"
-  "  }\\n"
-  "  data: 11.5\\n"
-  "}\\n"
-  "\"\n"
-  "}\n"
-  ""
-  position {
-    x: 222.0
-    y: 263.0
-  }
-  scale3 {
-    x: 0.5
-    y: 0.5
   }
 }
 embedded_instances {
