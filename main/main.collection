@@ -26,6 +26,15 @@ instances {
     z: 0.1
   }
 }
+instances {
+  id: "Stick2"
+  prototype: "/Objects/Stick.go"
+  position {
+    x: 265.0
+    y: 103.0
+    z: 0.1
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "camera"

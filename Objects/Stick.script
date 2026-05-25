@@ -1,7 +1,5 @@
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
+	self.name = "stick"
 end
 
 function final(self)
@@ -35,7 +33,10 @@ function on_message(self, message_id, message, sender)
 	
 	if message_id == hash("interact") then
 		print("Klick!")
+		msg.post(sender, "collect", { object = self.name} )
+		go.delete()
 	end
+	
 end
 
 function on_input(self, action_id, action)
