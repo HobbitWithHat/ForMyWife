@@ -40,3 +40,9 @@ embedded_components {
   "locked_rotation: true\n"
   ""
 }
+embedded_components {
+  id: "factory"
+  type: "factory"
+  data: "prototype: \"/Objects/Stick.go\"\n"
+  ""
+}

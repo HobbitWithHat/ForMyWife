@@ -16,6 +16,14 @@ instances {
     y: 88.0
     z: 0.1
   }
+  component_properties {
+    id: "Stick"
+    properties {
+      id: "item_id"
+      value: "stick"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
 }
 instances {
   id: "Stick1"
@@ -25,6 +33,14 @@ instances {
     y: 20.0
     z: 0.1
   }
+  component_properties {
+    id: "Stick"
+    properties {
+      id: "item_id"
+      value: "stick"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
 }
 instances {
   id: "Stick2"
@@ -33,6 +49,14 @@ instances {
     x: 265.0
     y: 103.0
     z: 0.1
+  }
+  component_properties {
+    id: "Stick"
+    properties {
+      id: "item_id"
+      value: "stone"
+      type: PROPERTY_TYPE_HASH
+    }
   }
 }
 scale_along_z: 0
