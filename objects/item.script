@@ -1,4 +1,4 @@
-local item_db = require "player.items"
+local item_db = require "objects.items"
 
 go.property("item_id", hash("stick"))
 
@@ -22,7 +22,7 @@ function init(self)
 	sprite.play_flipbook("#sprite", self.data.sprite)
 
 	-- Beispiel
-	print("Name:", data.name)
+	print("Name:", self.data.name)
 end
 
 function final(self)
@@ -57,7 +57,7 @@ function on_message(self, message_id, message, sender)
 	if message_id == hash("interact") then
 		if message.right == nil or message.left == nil then
 			print("gesammelt")
-			msg.post(sender, "collect", { object = self.item_id} )
+			msg.post(sender, "collect", { object = self.data} )
 			go.delete()
 		else
 			print("Hands full")

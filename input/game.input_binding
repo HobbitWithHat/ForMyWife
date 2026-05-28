@@ -22,6 +22,14 @@ key_trigger {
   input: KEY_Q
   action: "drop"
 }
+key_trigger {
+  input: KEY_V
+  action: "switch"
+}
+key_trigger {
+  input: KEY_C
+  action: "craft"
+}
 mouse_trigger {
   input: MOUSE_BUTTON_LEFT
   action: "touch"

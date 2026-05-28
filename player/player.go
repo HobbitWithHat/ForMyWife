@@ -43,6 +43,6 @@ embedded_components {
 embedded_components {
   id: "factory"
   type: "factory"
-  data: "prototype: \"/Objects/Stick.go\"\n"
+  data: "prototype: \"/objects/item.go\"\n"
   ""
 }

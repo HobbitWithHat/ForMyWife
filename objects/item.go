@@ -1,15 +1,15 @@
 components {
   id: "Stick"
-  component: "/Objects/Stick.script"
+  component: "/objects/item.script"
 }
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"Objekt\"\n"
+  data: "default_animation: \"stick\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/main/sprites.atlas\"\n"
+  "  texture: \"/objects/objects.tilesource\"\n"
   "}\n"
   ""
 }

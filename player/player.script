@@ -51,14 +51,13 @@ end
 
 
 function update(self, dt)
+	-- normiert den Bewegungsvektor
 	if vmath.length(self.dir) > 1 then
 		self.dir = vmath.normalize(self.dir)
 	end
-
-
+	--Updated Spieler Position
 	local p = go.get_position()
 	go.set_position(p + self.dir * self.speed * dt)
-
 	self.dir = vmath.vector3()
 
 end
@@ -101,19 +100,22 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
+	-- Erkennt, wenn Spieler mit Objekt kollidiert
 	if message_id == hash("trigger_response") and self.object ~= message.other_id then
 		if message.enter then
 			self.object = message.other_id
 		else
 			self.object = nil
 		end
+
+		-- Spieler sammelt Objekt ein
 	elseif message_id == hash("collect") then
 		if self.righthand == nil then
 			self.righthand = message.object
-			print("right: ", self.righthand, ", left: ", self.lefthand)
+			print("right: ", self.righthand.name, ", left: ", self.lefthand.name)
 		elseif self.lefthand == nil then
 			self.lefthand = message.object
-			print("right: ", self.righthand, ", left: ", self.lefthand)
+			print("right: ", self.righthand.name, ", left: ", self.lefthand.name)
 		end
 	end
 end
@@ -138,10 +140,23 @@ function on_input(self, action_id, action)
 
 		-- Spieler droppt Item in der linken Hand
 	elseif action_id == hash("drop") and action.pressed then
-		print("drop")
+		if self.lefthand then
+			print("dropped " .. self.lefthand.hash)
+			local props = {item_id = self.lefthand.hash}
+			factory.create("#factory", nil, nil, props)
+			self.lefthand = nil
+		end
 
 		-- Spieler wechselt Items der beiden Hände
+	elseif action_id == hash("switch") and action.pressed then
+		local stored = self.righthand
+		self.righthand = self.lefthand
+		self.lefthand = stored
+		print("right: ", self.righthand.name, ", left: ", self.lefthand.name)
+
 		-- Spieler vercrafted Items in den Händen, hält Ergebnis in rechter Hand
+	elseif action_id == hash("craft") and action.pressed then
+		print("craft")
 	end
 end
 
