@@ -1,0 +1,1 @@
+-- Tabelle für crafting-Rezepte

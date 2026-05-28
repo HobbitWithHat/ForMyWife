@@ -5,9 +5,6 @@ go.property("item_id", hash("stick"))
 
 
 function init(self)
-	
-	
-	print("ID:", self.item_id)
 
 	local data = item_db.items[self.item_id]
 
@@ -15,14 +12,10 @@ function init(self)
 		print("Item nicht gefunden:", self.item_id)
 		return
 	end
-
 	self.data = data 
 	
 	-- Sprite setzen
 	sprite.play_flipbook("#sprite", self.data.sprite)
-
-	-- Beispiel
-	print("Name:", self.data.name)
 end
 
 function final(self)
