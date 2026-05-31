@@ -100,8 +100,8 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	-- Erkennt, wenn Spieler mit Objekt kollidiert
-	if message_id == hash("trigger_response") and self.object ~= message.other_id then
+	-- Erkennt, wenn Spieler mit Objekt kollidiert, bzw. Kollision endet
+	if message_id == hash("trigger_response") then
 		if message.enter then
 			self.object = message.other_id
 		else
