@@ -3,6 +3,13 @@ tile_width: 16
 tile_height: 16
 collision_groups: "default"
 animations {
+  id: "none"
+  start_tile: 1
+  end_tile: 1
+  playback: PLAYBACK_NONE
+  fps: 0
+}
+animations {
   id: "stick"
   start_tile: 70
   end_tile: 70

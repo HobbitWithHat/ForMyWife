@@ -49,7 +49,6 @@ function on_message(self, message_id, message, sender)
 	
 	if message_id == hash("interact") then
 		if message.right == nil or message.left == nil then
-			print("gesammelt")
 			msg.post(sender, "collect", { object = self.data} )
 			go.delete()
 		else

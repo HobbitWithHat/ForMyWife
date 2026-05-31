@@ -1,6 +1,6 @@
 function init(self)
-	self.left = gui.get_node("left")
-	self.right = gui.get_node("right")
+	self.left = gui.get_node("l.icon")
+	self.right = gui.get_node("r.icon")
 end
 
 function final(self)
@@ -16,8 +16,18 @@ function update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("update_hands") then
+	if message_id == hash("show_hands") then
 		
+		if message.right then
+			gui.play_flipbook(self.right, message.right.sprite)
+		else
+			gui.play_flipbook(self.right, "none")
+		end
+		if message.left then
+			gui.play_flipbook(self.left, message.left.sprite)
+		else
+			gui.play_flipbook(self.left, "none")
+		end
 	end
 end
 

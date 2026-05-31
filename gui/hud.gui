@@ -7,6 +7,10 @@ fonts {
   name: "chronicle"
   font: "/main/chronicle.font"
 }
+textures {
+  name: "objects"
+  texture: "/objects/objects.tilesource"
+}
 nodes {
   position {
     x: 32.0
@@ -22,21 +26,12 @@ nodes {
   size_mode: SIZE_MODE_AUTO
 }
 nodes {
-  size {
-    x: 200.0
-    y: 100.0
-  }
-  color {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  type: TYPE_TEXT
-  text: "<text>"
-  font: "always_on_top"
-  id: "text"
+  type: TYPE_BOX
+  texture: "objects/none"
+  id: "l.icon"
   parent: "left"
   inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
 }
 nodes {
   position {
@@ -49,6 +44,14 @@ nodes {
   }
   type: TYPE_BOX
   id: "right"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  type: TYPE_BOX
+  texture: "objects/none"
+  id: "r.icon"
+  parent: "right"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }

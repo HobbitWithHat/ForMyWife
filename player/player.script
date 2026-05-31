@@ -112,10 +112,8 @@ function on_message(self, message_id, message, sender)
 	elseif message_id == hash("collect") then
 		if self.righthand == nil then
 			self.righthand = message.object
-			print("right: ", self.righthand.name, ", left: ", self.lefthand.name)
 		elseif self.lefthand == nil then
 			self.lefthand = message.object
-			print("right: ", self.righthand.name, ", left: ", self.lefthand.name)
 		end
 		msg.post("/hud#hud", "show_hands", {right = self.righthand, left = self.lefthand})
 	end
@@ -146,6 +144,7 @@ function on_input(self, action_id, action)
 			local props = {item_id = self.lefthand.hash}
 			factory.create("#factory", nil, nil, props)
 			self.lefthand = nil
+			msg.post("/hud#hud", "show_hands", {right = self.righthand, left = self.lefthand})
 		end
 
 		-- Spieler wechselt Items der beiden Hände
@@ -153,7 +152,7 @@ function on_input(self, action_id, action)
 		local stored = self.righthand
 		self.righthand = self.lefthand
 		self.lefthand = stored
-		print("right: ", self.righthand.name, ", left: ", self.lefthand.name)
+		msg.post("/hud#hud", "show_hands", {right = self.righthand, left = self.lefthand})
 
 		-- Spieler vercrafted Items in den Händen, hält Ergebnis in rechter Hand
 	elseif action_id == hash("craft") and action.pressed then
