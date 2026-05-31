@@ -117,6 +117,7 @@ function on_message(self, message_id, message, sender)
 			self.lefthand = message.object
 			print("right: ", self.righthand.name, ", left: ", self.lefthand.name)
 		end
+		msg.post("/hud#hud", "show_hands", {right = self.righthand, left = self.lefthand})
 	end
 end
 

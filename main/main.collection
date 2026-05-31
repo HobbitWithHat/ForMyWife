@@ -87,3 +87,11 @@ embedded_instances {
   "}\n"
   ""
 }
+embedded_instances {
+  id: "hud"
+  data: "components {\n"
+  "  id: \"hud\"\n"
+  "  component: \"/gui/hud.gui\"\n"
+  "}\n"
+  ""
+}

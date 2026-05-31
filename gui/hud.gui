@@ -1,0 +1,60 @@
+script: "/gui/hud.gui_script"
+fonts {
+  name: "always_on_top"
+  font: "/builtins/fonts/debug/always_on_top.font"
+}
+fonts {
+  name: "chronicle"
+  font: "/main/chronicle.font"
+}
+nodes {
+  position {
+    x: 32.0
+    y: 32.0
+  }
+  size {
+    x: 32.0
+    y: 32.0
+  }
+  type: TYPE_BOX
+  id: "left"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  size {
+    x: 200.0
+    y: 100.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_TEXT
+  text: "<text>"
+  font: "always_on_top"
+  id: "text"
+  parent: "left"
+  inherit_alpha: true
+}
+nodes {
+  position {
+    x: 368.0
+    y: 32.0
+  }
+  size {
+    x: 32.0
+    y: 32.0
+  }
+  type: TYPE_BOX
+  id: "right"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+material: "/builtins/materials/gui.material"
+adjust_reference: ADJUST_REFERENCE_PARENT
+materials {
+  name: "font"
+  material: "/builtins/fonts/font.material"
+}
