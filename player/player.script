@@ -1,9 +1,4 @@
-
-local dir
-local distance
-local step
-
-
+local recipes = require"objects.crafting"
 
 function init(self)
 	msg.post(".", "acquire_input_focus")

@@ -5,7 +5,7 @@ fonts {
 }
 fonts {
   name: "chronicle"
-  font: "/main/chronicle.font"
+  font: "/assets/fonts/chronicle.font"
 }
 textures {
   name: "objects"

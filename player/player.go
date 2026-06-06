@@ -13,7 +13,7 @@ embedded_components {
   "}\n"
   ""
   position {
-    z: 1.0
+    z: 0.1
   }
 }
 embedded_components {
