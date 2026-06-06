@@ -5,7 +5,6 @@ instances {
   position {
     x: 354.0
     y: 61.0
-    z: 1.0
   }
 }
 instances {
@@ -43,7 +42,7 @@ instances {
   }
 }
 instances {
-  id: "Stick2"
+  id: "stone"
   prototype: "/objects/item.go"
   position {
     x: 265.0
@@ -84,6 +83,19 @@ embedded_instances {
   data: "components {\n"
   "  id: \"testmap\"\n"
   "  component: \"/maps/testmap.tilemap\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/maps/testmap.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"block\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "locked_rotation: true\\n"
+  "\"\n"
   "}\n"
   ""
 }

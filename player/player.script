@@ -1,6 +1,3 @@
---require "main.pathfinding"
---local cursor = require "in.cursor"
-
 
 local dir
 local distance
@@ -17,30 +14,12 @@ function init(self)
 	self.sleep = 100
 
 	self.dir = vmath.vector3()
+	self.correction = vmath.vector3()
+	self.pp = vmath.vector3()
 
 	self.object = nil
 	self.righthand = nil
 	self.lefthand = nil
-	
-
-	--[[ Werte zum Pathfinding und Bewegung
-	local p = go.get_position()
-	go.set_position(p + self.dir * speed * dt)
-	self.moving = false
-	self.p_tile = {0, 0}
-	self.p_pos = vmath.vector3(0, 0, 0.1)
-	self.t_tile = {0, 0}
-	self.t_pos = vmath.vector3()
-
-
-	-- Initialisiere Startposition, berechnet erstes Tile der Spielerposition
-	self.p_pos = go.get_position()
-	self.p_tile = get_tile(self.p_pos)
-	self.p_pos = get_tile_position(self.p_tile)
-
-	-- Setzt Spieler auf erstes Tile
-	go.set_position(self.p_pos)
-	]]
 end
 
 function final(self)
@@ -51,37 +30,18 @@ end
 
 
 function update(self, dt)
+	self.correction = vmath.vector3()
+	
 	-- normiert den Bewegungsvektor
 	if vmath.length(self.dir) > 1 then
 		self.dir = vmath.normalize(self.dir)
 	end
 	--Updated Spieler Position
 	local p = go.get_position()
-	go.set_position(p + self.dir * self.speed * dt)
+	local new_p = p + self.dir * self.speed * dt
+	go.set_position(new_p)
 	self.dir = vmath.vector3()
-
 end
-
---[[ Update fpr Laufen mit Pathfinding
-	if self.moving then
-		if is_walkable() then
-
-			pos = go.get_position()
-			dir = self.goal - pos
-			distance = vmath.length(dir)
-			step = self.speed * dt
-			
-			if distance <= step then
-				go.set_position(self.goal)
-				self.moving = false
-			else
-				dir = vmath.normalize(dir)
-				pos = pos + dir * step
-				go.set_position(pos)
-			end
-		end
-	end
-	]]
 
 
 function late_update(self, dt)
@@ -100,8 +60,28 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
+
+	if message_id == hash("contact_point_response") then
+		-- Get the info needed to move out of collision. We might
+		-- get several contact points back and have to calculate
+		-- how to move out of all of them by accumulating a
+		-- correction vector for this frame:
+		if message.distance > 0 then
+			-- First, project the accumulated correction onto
+			-- the penetration vector
+			local proj = vmath.project(self.correction, message.normal * message.distance)
+			if proj < 1 then
+				-- Only care for projections that does not overshoot.
+				local comp = (message.distance - message.distance * proj) * message.normal
+				-- Apply compensation
+				go.set_position(go.get_position() + comp)
+				-- Accumulate correction done
+				self.correction = self.correction + comp
+			end
+		end
+		
 	-- Erkennt, wenn Spieler mit Objekt kollidiert, bzw. Kollision endet
-	if message_id == hash("trigger_response") then
+	elseif message_id == hash("trigger_response") then
 		if message.enter then
 			self.object = message.other_id
 		else
