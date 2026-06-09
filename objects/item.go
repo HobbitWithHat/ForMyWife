@@ -1,5 +1,5 @@
 components {
-  id: "Stick"
+  id: "item"
   component: "/objects/item.script"
 }
 embedded_components {

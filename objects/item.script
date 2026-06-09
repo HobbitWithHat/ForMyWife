@@ -1,6 +1,6 @@
 local item_db = require "objects.items"
 
-go.property("item_id", hash("stick"))
+go.property("item_id", hash(""))
 
 
 
