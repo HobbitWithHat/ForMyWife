@@ -19,8 +19,8 @@ M.items = {
 	[hash("spear")] = {
 		hash = hash("spear"),
 		name = "Speer",
-		sprite = "Objekt",
-		crafting = "spear"
+		sprite = "spear",
+		crafting = {hash("stick"), hash("stone")}  -- die zwei Zutaten
 	}
 }
 

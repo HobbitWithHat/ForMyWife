@@ -151,9 +151,17 @@ function on_input(self, action_id, action)
 
 		-- Spieler vercrafted Items in den Händen, hält Ergebnis in rechter Hand
 	elseif action_id == hash("craft") and action.pressed then
-		print("craft")
-		try_craft(self)
-		
+		local success, result, err = crafting.craft(self.righthand, self.lefthand)
+
+		if success then
+			self.righthand = result
+			self.lefthand = nil
+		else
+			-- err: "missing_items" oder "no_recipe" - für eigenes Feedback im HUD nutzbar
+			print("Crafting fehlgeschlagen: " .. err)
+		end
+
+		msg.post("/hud#hud", "show_hands", {right = self.righthand, left = self.lefthand})
 	end
 end
 

@@ -10,6 +10,13 @@ animations {
   fps: 0
 }
 animations {
+  id: "spear"
+  start_tile: 166
+  end_tile: 166
+  playback: PLAYBACK_NONE
+  fps: 0
+}
+animations {
   id: "stick"
   start_tile: 70
   end_tile: 70
