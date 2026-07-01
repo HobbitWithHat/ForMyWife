@@ -1,0 +1,63 @@
+name: "0-0"
+instances {
+  id: "item"
+  prototype: "/objects/item.go"
+  position {
+    x: 169.0
+    y: 103.0
+    z: 0.1
+  }
+  component_properties {
+    id: "item"
+    properties {
+      id: "item_id"
+      value: "stick"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "item1"
+  prototype: "/objects/item.go"
+  position {
+    x: 165.0
+    y: 62.0
+    z: 0.1
+  }
+  component_properties {
+    id: "item"
+    properties {
+      id: "item_id"
+      value: "stone"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "item"
+  children: "item1"
+  children: "map"
+  data: ""
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"testmap\"\n"
+  "  component: \"/maps/test 0 0.tilemap\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/maps/test 0 0.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_STATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"block\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

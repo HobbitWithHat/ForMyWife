@@ -1,0 +1,129 @@
+local SCREEN_W = 320          -- Breite eines Screens in Pixel
+local SCREEN_H = 180          -- Höhe eines Screens in Pixel
+local TRIGGER_MARGIN = 8      -- Pixel vom Rand: ab hier startet Transition
+local TRANSITION_DURATION = 0.4
+
+local current_coord = vmath.vector3(0, 0, 0)  -- aktueller Screen (x/y als Grid-Koordinate)
+local current_screen_root = nil               -- URL des Root-GO des aktiven Screens
+local transitioning = false
+local player_url = msg.url("/player")  -- anpassen!
+
+local DIRS = {
+	right = vmath.vector3( 1,  0, 0),
+	left  = vmath.vector3(-1,  0, 0),
+	up    = vmath.vector3( 0,  1, 0),
+	down  = vmath.vector3( 0, -1, 0),
+}
+
+-- Baut den Factory-URL-String aus einer Grid-Koordinate
+local function factory_url(coord)
+	print(string.format("/game#factory ".. coord.x .. " " .. coord.y))
+	return string.format("/game#factory ".. coord.x .. " " .. coord.y)
+end
+
+
+-- Gibt den Offset zurück, an dem der neue Screen startet (außerhalb des Sichtfelds)
+local function entry_offset(dir)
+	return vmath.vector3(dir.x * SCREEN_W, dir.y * SCREEN_H, 0)
+end
+
+-- Wo der Spieler nach der Transition steht (knapp innerhalb des neuen Screens)
+local function player_entry_pos(dir)
+	local cx = SCREEN_W / 2
+	local cy = SCREEN_H / 2
+	local margin = TRIGGER_MARGIN + 4
+	return vmath.vector3(
+	cx - dir.x * (SCREEN_W / 2 - margin),
+	cy - dir.y * (SCREEN_H / 2 - margin),
+	0
+)
+end
+
+local function lock_player()
+msg.post(player_url, "lock_input")
+end
+
+local function unlock_player()
+msg.post(player_url, "unlock_input")
+end
+
+local function check_trigger(player_pos)
+local lx = player_pos.x
+local ly = player_pos.y
+if lx < TRIGGER_MARGIN then            
+	return DIRS.left
+elseif lx > SCREEN_W - TRIGGER_MARGIN then
+	return DIRS.right
+elseif ly < TRIGGER_MARGIN then
+	return DIRS.down
+elseif ly > SCREEN_H - TRIGGER_MARGIN then
+	return DIRS.up
+end
+return nil
+end
+
+local function start_transition(dir)
+transitioning = true
+lock_player()
+
+local next_coord = current_coord + dir
+local f_url = factory_url(next_coord)
+
+-- Neue Collection laden; wenn Factory nicht existiert → abbrechen
+local ok, new_root = pcall(collectionfactory.create, f_url,
+vmath.vector3(dir.x * SCREEN_W, dir.y * SCREEN_H, 0))
+
+if not ok or not new_root then
+	-- Kein Screen in diese Richtung – einfach abbrechen
+	transitioning = false
+	unlock_player()
+	return
+end
+
+-- Root-GO des neuen Screens ermitteln (Konvention: heißt "root")
+local new_root_url = msg.url(nil, new_root[hash("/root")], nil)
+
+-- Beide Screens animieren: alter raus, neuer rein
+local old_root = current_screen_root
+local slide_old = vmath.vector3(-dir.x * SCREEN_W, -dir.y * SCREEN_H, 0)
+
+go.animate(old_root, "position", go.PLAYBACK_ONCE_FORWARD,
+go.get(old_root, "position") + slide_old,
+go.EASING_INOUT_SINE, TRANSITION_DURATION)
+
+go.animate(new_root_url, "position", go.PLAYBACK_ONCE_FORWARD,
+vmath.vector3(0, 0, 0),  -- Zielposition: Ursprung (Kamera-Mittelpunkt)
+go.EASING_INOUT_SINE, TRANSITION_DURATION, 0,
+function()
+	-- Alte Collection entladen
+	go.delete(old_root, true)
+
+	-- Spieler auf Eintrittsseite setzen
+	local entry = player_entry_pos(dir)
+	go.set_position(entry, player_url)
+
+	current_coord = next_coord
+	current_screen_root = new_root_url
+	transitioning = false
+	unlock_player()
+end)
+end
+
+function init(self)
+-- Ersten Screen laden
+local f_url = factory_url(current_coord)
+local roots = collectionfactory.create(f_url, vmath.vector3(0, 0, 0))
+current_screen_root = msg.url(nil, roots[hash("/root")], nil)
+end
+
+function update(self, dt)
+if transitioning then
+	return 
+end
+
+local player_pos = go.get_position(player_url)
+local dir = check_trigger(player_pos)
+if dir then
+	start_transition(dir)
+end
+end

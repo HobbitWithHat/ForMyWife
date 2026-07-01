@@ -1880,7 +1880,7 @@ layers {
 }
 layers {
   id: "edges"
-  z: 0.0
+  z: 0.1
   cell {
     x: 0
     y: 0

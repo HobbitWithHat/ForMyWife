@@ -1,0 +1,22 @@
+Cozy Island – Tropical Topdown Tileset
+Version 1.0
+
+Initial Release
+
+Added:
+- 450+ tiles (including animation frames)
+- Animated water tiles (4-frame loop)
+- Sand and shoreline terrain
+- Tropical beach houses and huts
+- Seaside bar / restaurant building
+- Palm trees and tropical nature assets
+- Modular wooden piers
+- Beach props and decorations
+- Small character sprites
+- Coastal environment details
+
+Features:
+- 16x16 pixel art
+- Topdown RPG-style perspective
+- Compatible with Cozy Series art style
+- Organized tileset layout

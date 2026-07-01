@@ -1,5 +1,5 @@
 components {
-  id: "player"
+  id: "script"
   component: "/player/player.script"
 }
 embedded_components {
@@ -17,7 +17,7 @@ embedded_components {
   }
 }
 embedded_components {
-  id: "collisionobject"
+  id: "collider"
   type: "collisionobject"
   data: "type: COLLISION_OBJECT_TYPE_KINEMATIC\n"
   "mass: 0.0\n"
