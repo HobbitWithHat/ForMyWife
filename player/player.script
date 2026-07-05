@@ -30,7 +30,7 @@ end
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
-	--msg.post("#collider", "disable")
+	msg.post("#collider", "disable")
 
 	-- Spieler Attribute und Werte
 	self.speed = 100
@@ -76,6 +76,7 @@ end
 local function activate(self)
 	msg.post(".", "acquire_input_focus")					
 	msg.post("#collider", "enable")
+	
 end
 
 function on_message(self, message_id, message, sender)

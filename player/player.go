@@ -27,7 +27,6 @@ embedded_components {
   "mask: \"interact\"\n"
   "mask: \"static\"\n"
   "mask: \"world\"\n"
-  "mask: \"block\"\n"
   "embedded_collision_shape {\n"
   "  shapes {\n"
   "    shape_type: TYPE_BOX\n"

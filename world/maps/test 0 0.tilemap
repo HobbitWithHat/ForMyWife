@@ -1,4 +1,4 @@
-tile_set: "/maps/First.tilesource"
+tile_set: "/world/First.tilesource"
 layers {
   id: "ground"
   z: 0.0
