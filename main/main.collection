@@ -15,17 +15,17 @@ embedded_instances {
   "  id: \"camera\"\n"
   "  type: \"camera\"\n"
   "  data: \"aspect_ratio: 1.0\\n"
-  "fov: 0.7854\\n"
+  "fov: 1.0\\n"
   "near_z: -1.0\\n"
   "far_z: 1.0\\n"
   "orthographic_projection: 1\\n"
-  "orthographic_mode: ORTHO_MODE_AUTO_COVER\\n"
+  "orthographic_mode: ORTHO_MODE_AUTO_FIT\\n"
   "\"\n"
   "}\n"
   ""
   position {
-    x: 200.0
-    y: 120.0
+    x: 300.0
+    y: 240.0
   }
 }
 embedded_instances {

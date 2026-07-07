@@ -5,10 +5,10 @@ local scroll_speed = 0.5
 -- start positions of loaded screens. Abhängig von Bildschirmparametern machen
 local positions = { 
 	[hash("center")] = vmath.vector3(),
-	[hash("up")] = vmath.vector3(0, 240, 0),
-	[hash("down")] = vmath.vector3(0, -240, 0),
-	[hash("right")] = vmath.vector3(400, 0, 0),
-	[hash("left")] = vmath.vector3(-400, 0, 0)
+	[hash("up")] = vmath.vector3(0, 480, 0),
+	[hash("down")] = vmath.vector3(0, -480, 0),
+	[hash("right")] = vmath.vector3(600, 0, 0),
+	[hash("left")] = vmath.vector3(-600, 0, 0)
 }
 
 

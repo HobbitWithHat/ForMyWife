@@ -1,11 +1,7 @@
 function init(self)
-	self.left = gui.get_node("l.icon")
-	self.right = gui.get_node("r.icon")
-	self.textbox = gui.get_node("textbox")
-	self.text = gui.get_node("text")
-
-	gui.set_visible(self.textbox, false)
-	gui.set_visible(self.text, false)
+	-- Add initialization code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
 end
 
 function final(self)
@@ -20,29 +16,25 @@ function update(self, dt)
 	-- Remove this function if not needed
 end
 
+function late_update(self, dt)
+	-- This function is called at the end of update cycle but before render
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
+function fixed_update(self, dt)
+	-- This function is called if 'Fixed Update Frequency' is enabled in the Engine section of game.project
+	-- Can be coupled with fixed updates of the physics simulation if 'Use Fixed Timestep' is enabled in
+	-- Physics section of game.project
+	-- Add update code here
+	-- Learn more: https://defold.com/manuals/script/
+	-- Remove this function if not needed
+end
+
 function on_message(self, message_id, message, sender)
-	if message_id == hash("show_hands") then
-		
-		if message.right then
-			gui.play_flipbook(self.right, message.right.sprite)
-		else
-			gui.play_flipbook(self.right, "none")
-		end
-		
-		if message.left then
-			gui.play_flipbook(self.left, message.left.sprite)
-		else
-			gui.play_flipbook(self.left, "none")
-		end
-
-	elseif message_id == hash("show_text") then
-		gui.set_text(self.text, message.content)
-		gui.set_visible(self.textbox, true)
-		gui.set_visible(self.text, true)
-
-	elseif message_id == hash("hide_text") then
-		gui.set_visible(self.text, false)
-		gui.set_visible(self.textbox, false)
+	if message_id == hash("interact") then
+		msg.post("/hud#hud", "show_text", {type = hash("dialog"), content = "Hello you!"})
+		print("Hello you!")
 	end
 end
 

@@ -6724,6 +6724,11 @@ convex_hulls {
 }
 collision_groups: "world"
 animations {
+  id: "femVillager"
+  start_tile: 1
+  end_tile: 1
+}
+animations {
   id: "fire"
   start_tile: 1220
   end_tile: 1223
