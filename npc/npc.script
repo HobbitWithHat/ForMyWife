@@ -1,7 +1,9 @@
+--go.property("name", hash("Kupeke"))
+local npc = require("npc.Kupeke")
+local int = 1
+
+
 function init(self)
-	-- Add initialization code here
-	-- Learn more: https://defold.com/manuals/script/
-	-- Remove this function if not needed
 end
 
 function final(self)
@@ -33,8 +35,13 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("interact") then
-		msg.post("/hud#hud", "show_text", {type = hash("dialog"), content = "Hello you!"})
-		print("Hello you!")
+		if npc.text[int] then
+			msg.post("/hud#hud", "show_text", {type = hash("dialog"), content = npc.text[int]})
+			int = int+1
+		else
+			msg.post("/hud#hud", "hide_text")
+			int = 1
+		end
 	end
 end
 
