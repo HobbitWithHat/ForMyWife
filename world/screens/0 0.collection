@@ -48,6 +48,7 @@ embedded_instances {
   children: "item"
   children: "item1"
   children: "map"
+  children: "npc"
   data: ""
 }
 embedded_instances {

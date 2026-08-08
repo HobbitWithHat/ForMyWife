@@ -1,9 +1,14 @@
 --go.property("name", hash("Kupeke"))
+
+
+go.property("npc", hash("npc.Kupeke"))
 local npc = require("npc.Kupeke")
-local int = 1
 
 
 function init(self)
+	self.dia = 1
+	self.int = 1
+	print(self.npc)
 end
 
 function final(self)
@@ -35,12 +40,15 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("interact") then
-		if npc.text[int] then
-			msg.post("/hud#hud", "show_text", {type = hash("dialog"), content = npc.text[int]})
-			int = int+1
+		if npc.text[self.dia][self.int] then
+			msg.post("/hud#hud", "show_text", {type = hash("dialog"), content = npc.text[self.dia][self.int]})
+			self.int = self.int+1
 		else
 			msg.post("/hud#hud", "hide_text")
-			int = 1
+			self.int = 1
+			if npc.text[self.dia+1] then
+				self.dia = self.dia+1
+			end
 		end
 	end
 end

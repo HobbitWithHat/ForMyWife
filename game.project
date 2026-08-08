@@ -34,3 +34,6 @@ velocity_threshold = 100.0
 [html5]
 scale_mode = stretch
 
+[tilemap]
+max_tile_count = 4096
+
