@@ -1,0 +1,27 @@
+name: "3 0"
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "map"
+  data: ""
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"3 0\"\n"
+  "  component: \"/world/maps/3 0.tilemap\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/world/maps/3 0.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"default\\\"\\n"
+  "mask: \\\"default\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

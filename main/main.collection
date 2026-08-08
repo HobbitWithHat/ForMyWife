@@ -72,5 +72,11 @@ embedded_instances {
   "  data: \"prototype: \\\"/world/screens/1 0.collection\\\"\\n"
   "\"\n"
   "}\n"
+  "embedded_components {\n"
+  "  id: \"factory 1 -1\"\n"
+  "  type: \"collectionfactory\"\n"
+  "  data: \"prototype: \\\"/world/screens/1 -1.collection\\\"\\n"
+  "\"\n"
+  "}\n"
   ""
 }

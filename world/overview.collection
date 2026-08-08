@@ -4,13 +4,6 @@ collection_instances {
   collection: "/world/screens/0 0.collection"
 }
 collection_instances {
-  id: "0 1"
-  collection: "/world/screens/0 1.collection"
-  position {
-    y: 480.0
-  }
-}
-collection_instances {
   id: "1 0"
   collection: "/world/screens/1 0.collection"
   position {
@@ -18,17 +11,32 @@ collection_instances {
   }
 }
 collection_instances {
-  id: "-1 0"
-  collection: "/world/screens/-1 0.collection"
-  position {
-    x: -640.0
-  }
-}
-collection_instances {
   id: "0 -1"
   collection: "/world/screens/0 -1.collection"
   position {
     y: -480.0
+  }
+}
+collection_instances {
+  id: "1 -1"
+  collection: "/world/screens/1 -1.collection"
+  position {
+    x: 640.0
+    y: -480.0
+  }
+}
+collection_instances {
+  id: "2 0"
+  collection: "/world/screens/2 0.collection"
+  position {
+    x: 1280.0
+  }
+}
+collection_instances {
+  id: "3 0"
+  collection: "/world/screens/3 0.collection"
+  position {
+    x: 1920.0
   }
 }
 scale_along_z: 0
