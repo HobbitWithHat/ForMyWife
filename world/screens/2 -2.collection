@@ -1,0 +1,27 @@
+name: "2 -2"
+scale_along_z: 0
+embedded_instances {
+  id: "root"
+  children: "map"
+  data: ""
+}
+embedded_instances {
+  id: "map"
+  data: "components {\n"
+  "  id: \"2 -2\"\n"
+  "  component: \"/world/maps/2 -2.tilemap\"\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"collisionobject\"\n"
+  "  type: \"collisionobject\"\n"
+  "  data: \"collision_shape: \\\"/world/maps/2 -2.tilemap\\\"\\n"
+  "type: COLLISION_OBJECT_TYPE_KINEMATIC\\n"
+  "mass: 0.0\\n"
+  "friction: 0.1\\n"
+  "restitution: 0.5\\n"
+  "group: \\\"world\\\"\\n"
+  "mask: \\\"player\\\"\\n"
+  "\"\n"
+  "}\n"
+  ""
+}

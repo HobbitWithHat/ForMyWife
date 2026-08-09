@@ -35,7 +35,7 @@ nodes {
 }
 nodes {
   position {
-    x: 568.0
+    x: 608.0
     y: 32.0
   }
   size {
@@ -57,7 +57,7 @@ nodes {
 }
 nodes {
   position {
-    x: 300.0
+    x: 320.0
     y: 60.0
   }
   size {
@@ -85,6 +85,44 @@ nodes {
   id: "text"
   parent: "textbox"
   inherit_alpha: true
+}
+nodes {
+  position {
+    x: -200.0
+    y: 240.0
+  }
+  size {
+    x: 400.0
+    y: 480.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "box"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 840.0
+    y: 240.0
+  }
+  size {
+    x: 400.0
+    y: 480.0
+  }
+  color {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  type: TYPE_BOX
+  id: "box1"
+  inherit_alpha: true
+  size_mode: SIZE_MODE_AUTO
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT

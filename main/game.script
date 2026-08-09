@@ -7,8 +7,8 @@ local positions = {
 	[hash("center")] = vmath.vector3(),
 	[hash("up")] = vmath.vector3(0, 480, 0),
 	[hash("down")] = vmath.vector3(0, -480, 0),
-	[hash("right")] = vmath.vector3(600, 0, 0),
-	[hash("left")] = vmath.vector3(-600, 0, 0)
+	[hash("right")] = vmath.vector3(640, 0, 0),
+	[hash("left")] = vmath.vector3(-640, 0, 0)
 }
 
 

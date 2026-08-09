@@ -65,7 +65,7 @@ function update(self, dt)
 		msg.post("/game#script", "load_screen", { dir = hash("up") })
 	elseif new_p.y < 0 then
 		msg.post("/game#script", "load_screen", { dir = hash("down") })
-	elseif new_p.x > 600 then
+	elseif new_p.x > 640 then
 		msg.post("/game#script", "load_screen", { dir = hash("right") })
 	elseif new_p.x < 0 then
 		msg.post("/game#script", "load_screen", { dir = hash("left") })
@@ -125,7 +125,7 @@ function on_message(self, message_id, message, sender)
 		-- animate in from the edge into next screen, then activate.
 		local p = go.get_position()
 		local dp = enters[message.dir]
-		go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, p+dp, go.EASING_LINEAR, 0.3, 0, activate)
+		go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, p+dp, go.EASING_LINEAR, 0.1, 0, activate)
 	end
 end
 
