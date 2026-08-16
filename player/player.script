@@ -99,6 +99,11 @@ function on_message(self, message_id, message, sender)
 				self.correction = self.correction + comp
 			end
 		end
+
+
+	elseif message_id == hash("teleport") then
+		print("teleport to: " .. message.dest)
+		go.set_position(message.dest)
 		
 	-- Erkennt, wenn Spieler mit Objekt kollidiert, bzw. Kollision endet
 	elseif message_id == hash("trigger_response") then
@@ -126,6 +131,7 @@ function on_message(self, message_id, message, sender)
 		local p = go.get_position()
 		local dp = enters[message.dir]
 		go.animate(".", "position", go.PLAYBACK_ONCE_FORWARD, p+dp, go.EASING_LINEAR, 0.1, 0, activate)
+
 	end
 end
 

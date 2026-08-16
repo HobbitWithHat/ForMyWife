@@ -405,7 +405,7 @@ layers {
   cell {
     x: 0
     y: 2
-    tile: 40
+    tile: 352
   }
   cell {
     x: 1
