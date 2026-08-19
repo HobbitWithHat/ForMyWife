@@ -5,14 +5,15 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"Spieler\"\n"
+  data: "default_animation: \"idle_down\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/main/sprites.atlas\"\n"
+  "  texture: \"/assets/characters/Friday.tilesource\"\n"
   "}\n"
   ""
   position {
+    y: 13.0
     z: 0.1
   }
 }

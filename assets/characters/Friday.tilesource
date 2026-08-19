@@ -1,10 +1,60 @@
 image: "/assets/characters/Friday.png"
-tile_width: 16
-tile_height: 16
+tile_width: 48
+tile_height: 48
 collision_groups: "default"
 animations {
-  id: "anim"
+  id: "idle_down"
   start_tile: 1
-  end_tile: 1
+  end_tile: 4
+  fps: 4
+}
+animations {
+  id: "idle_left"
+  start_tile: 7
+  end_tile: 10
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+}
+animations {
+  id: "idle_right"
+  start_tile: 13
+  end_tile: 16
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+}
+animations {
+  id: "idle_up"
+  start_tile: 19
+  end_tile: 22
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+}
+animations {
+  id: "walk_down"
+  start_tile: 25
+  end_tile: 30
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 4
+}
+animations {
+  id: "walk_left"
+  start_tile: 31
+  end_tile: 36
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 6
+}
+animations {
+  id: "walk_right"
+  start_tile: 37
+  end_tile: 42
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 6
+}
+animations {
+  id: "walk_up"
+  start_tile: 43
+  end_tile: 48
+  playback: PLAYBACK_LOOP_FORWARD
+  fps: 6
 }
 extrude_borders: 2
