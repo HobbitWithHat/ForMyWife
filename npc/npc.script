@@ -39,7 +39,21 @@ function fixed_update(self, dt)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("interact") then
+	if message_id == hash("contact_point_response") then
+		print(message.normal)
+		vmath.normalize(message.normal)
+		if message.normal.x > 0 then
+			sprite.play_flipbook("#sprite", hash("idle_left"))
+		elseif message.normal.x < 0 then
+			sprite.play_flipbook("#sprite", hash("idle_right"))
+		elseif message.normal.y > 0 then
+			sprite.play_flipbook("#sprite", hash("idle_down"))
+		elseif message.normal.y < 0 then
+			sprite.play_flipbook("#sprite", hash("idle_up"))
+		end
+		
+
+	elseif message_id == hash("interact") then
 		if npc.text[self.dia][self.int] then
 			msg.post("/hud#hud", "show_text", {type = hash("dialog"), content = npc.text[self.dia][self.int]})
 			self.int = self.int+1

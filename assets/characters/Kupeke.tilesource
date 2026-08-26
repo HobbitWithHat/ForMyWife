@@ -1,4 +1,4 @@
-image: "/assets/characters/Friday.png"
+image: "/assets/characters/Kupeke.png"
 tile_width: 48
 tile_height: 48
 collision_groups: "default"
@@ -29,33 +29,5 @@ animations {
   end_tile: 22
   playback: PLAYBACK_LOOP_FORWARD
   fps: 4
-}
-animations {
-  id: "walk_down"
-  start_tile: 25
-  end_tile: 30
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 8
-}
-animations {
-  id: "walk_left"
-  start_tile: 31
-  end_tile: 36
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 8
-}
-animations {
-  id: "walk_right"
-  start_tile: 37
-  end_tile: 42
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 8
-}
-animations {
-  id: "walk_up"
-  start_tile: 43
-  end_tile: 48
-  playback: PLAYBACK_LOOP_FORWARD
-  fps: 8
 }
 extrude_borders: 2

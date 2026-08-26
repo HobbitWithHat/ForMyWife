@@ -16,12 +16,58 @@ M.items = {
 		crafting = nil
 	},
 
+	[hash("fiber")] = {
+		hash = hash("fiber"),
+		name = "Faser",
+		sprite = "fiber",
+		crafting = nil
+
+	},
+
+	[hash("bone")] = {
+		hash = hash("bone"),
+		name = "Knochen",
+		sprite = "bone",
+		crafting = nil
+	},
+
+-- herstellbare items
+	
 	[hash("spear")] = {
 		hash = hash("spear"),
 		name = "Speer",
 		sprite = "spear",
 		crafting = {hash("stick"), hash("stone")}  -- die zwei Zutaten
-	}
+	},
+
+	[hash("rope")] = {
+		hash = hash("rope"),
+		name = "Seil",
+		sprite = "rope",
+		crafting = {hash("fiber"), hash("fiber")}
+	},
+
+	[hash("torch")] = {
+		hash = hash("torch"),
+		name = "Fackel",
+		sprite = "torch",
+		crafting = {hash("stick"), hash("fiber")}
+	},
+
+	[hash("hand axe")] = {
+		hash = hash("hand axe"),
+		name = "Faustkeil",
+		sprite = "hand axe",
+		crafting = {hash("stone"), hash("stone")}
+	},
+
+	[hash("axe")] = {
+		hash = hash("axe"),
+		name = "Axt",
+		sprite = "axe",
+		crafting = {hash("hand axe"), hash("stick")}
+	},
+	
 }
 
 return M

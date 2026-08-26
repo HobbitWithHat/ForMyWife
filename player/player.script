@@ -114,7 +114,7 @@ end
 
 
 local function activate(self)
-	msg.post(".", "acquire_input_focus")					
+	msg.post(".", "acquire_input_focus")
 	msg.post("#collider", "enable")
 	
 end

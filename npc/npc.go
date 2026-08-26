@@ -5,13 +5,16 @@ components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"Spieler\"\n"
+  data: "default_animation: \"idle_down\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/main/sprites.atlas\"\n"
+  "  texture: \"/assets/characters/Kupeke.tilesource\"\n"
   "}\n"
   ""
+  position {
+    y: 13.0
+  }
 }
 embedded_components {
   id: "trigger"
@@ -32,8 +35,8 @@ embedded_components {
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 8.0\n"
-  "  data: 8.0\n"
+  "  data: 16.0\n"
+  "  data: 16.0\n"
   "  data: 8.0\n"
   "}\n"
   ""
@@ -57,8 +60,8 @@ embedded_components {
   "    index: 0\n"
   "    count: 3\n"
   "  }\n"
-  "  data: 8.0\n"
-  "  data: 8.0\n"
+  "  data: 16.0\n"
+  "  data: 16.0\n"
   "  data: 8.0\n"
   "}\n"
   ""
