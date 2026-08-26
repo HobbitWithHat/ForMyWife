@@ -6,6 +6,7 @@ animations {
   id: "idle_down"
   start_tile: 1
   end_tile: 4
+  playback: PLAYBACK_LOOP_FORWARD
   fps: 4
 }
 animations {

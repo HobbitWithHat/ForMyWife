@@ -34,6 +34,8 @@ function init(self)
 
 	self.current_animation = hash("idle_down")
 
+	sprite.play_flipbook("#sprite", self.current_animation)
+
 	-- Spieler Attribute und Werte
 	self.speed = 100
 	self.hunger = 100
@@ -60,9 +62,8 @@ function update(self, dt)
 	local p = go.get_position()
 	local new_p = p + self.dir * self.speed * dt
 	go.set_position(new_p)
-	self.dir = vmath.vector3()
 
-	local animation = hash("idle_down")
+	local animation = self.current_animation
 
 	-- Depending on the direction vector change it to a proper animation:
 	if self.dir.x > 0 then
@@ -73,14 +74,32 @@ function update(self, dt)
 		animation = hash("walk_up")
 	elseif self.dir.y < 0 then
 		animation = hash("walk_down")
+		
+	elseif self.dir.x == 0 and self.dir.y == 0 then
+		if self.current_animation == hash("walk_up") then
+			animation = hash("idle_up")
+		elseif self.current_animation == hash("walk_left") then
+			animation = hash("idle_left")
+		elseif self.current_animation == hash("walk_right") then
+			animation = hash("idle_right")
+		elseif self.current_animation == hash("walk_down") then
+			animation = hash("idle_down")
+		end
 	end
 
+	
 	-- if the animation we decided to play is different from the xurrent one playing:
-	if animation ~= self.current_animation then 
+	if self.current_animation ~= animation then 
 		sprite.play_flipbook("#sprite", animation) -- Play the new Animation
 		self.current_animation = animation -- an update the variable tracking the current nimation
 	end
 
+	--print("anim: " .. animation)
+	print("current: " .. self.current_animation)
+
+	self.dir = vmath.vector3()
+
+	
 	-- trigger load at screen edges
 	if new_p.y > 480 then
 		msg.post("/game#script", "load_screen", { dir = hash("up") })
