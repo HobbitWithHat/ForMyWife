@@ -31,12 +31,14 @@ M.items = {
 		crafting = nil
 	},
 
+
+	
 -- herstellbare items
 	
-	[hash("spear")] = {
-		hash = hash("spear"),
-		name = "Speer",
-		sprite = "spear",
+	[hash("axe")] = {
+		hash = hash("axe"),
+		name = "Axt",
+		sprite = "axe",
 		crafting = {hash("stick"), hash("stone")}  -- die zwei Zutaten
 	},
 
@@ -61,10 +63,10 @@ M.items = {
 		crafting = {hash("stone"), hash("stone")}
 	},
 
-	[hash("axe")] = {
-		hash = hash("axe"),
-		name = "Axt",
-		sprite = "axe",
+	[hash("spear")] = {
+		hash = hash("spear"),
+		name = "Speer",
+		sprite = "spear",
 		crafting = {hash("hand axe"), hash("stick")}
 	},
 	

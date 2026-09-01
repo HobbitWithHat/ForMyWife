@@ -25,12 +25,14 @@ function on_message(self, message_id, message, sender)
 		
 		if message.right then
 			gui.play_flipbook(self.right, message.right.sprite)
+			print(message.right.sprite)
 		else
 			gui.play_flipbook(self.right, "none")
 		end
 		
 		if message.left then
 			gui.play_flipbook(self.left, message.left.sprite)
+			print(message.left.sprite)
 		else
 			gui.play_flipbook(self.left, "none")
 		end

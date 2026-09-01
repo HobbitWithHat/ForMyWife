@@ -9,7 +9,7 @@ fonts {
 }
 textures {
   name: "objects"
-  texture: "/objects/objects.tilesource"
+  texture: "/things/items/items.atlas"
 }
 nodes {
   position {

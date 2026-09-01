@@ -1,6 +1,6 @@
 components {
   id: "item"
-  component: "/objects/item.script"
+  component: "/things/items/item.script"
 }
 embedded_components {
   id: "sprite"
@@ -9,7 +9,7 @@ embedded_components {
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/objects/objects.tilesource\"\n"
+  "  texture: \"/things/items/items.atlas\"\n"
   "}\n"
   ""
 }

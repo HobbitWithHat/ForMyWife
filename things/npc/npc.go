@@ -1,6 +1,6 @@
 components {
   id: "npc"
-  component: "/npc/npc.script"
+  component: "/things/npc/npc.script"
 }
 embedded_components {
   id: "sprite"

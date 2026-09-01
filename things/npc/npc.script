@@ -2,7 +2,7 @@
 
 
 go.property("npc", hash("npc.Kupeke"))
-local npc = require("npc.Kupeke")
+local npc = require("things.npc.Kupeke")
 
 
 function init(self)
@@ -40,7 +40,6 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("contact_point_response") then
-		print(message.normal)
 		vmath.normalize(message.normal)
 		if message.normal.x > 0 then
 			sprite.play_flipbook("#sprite", hash("idle_left"))

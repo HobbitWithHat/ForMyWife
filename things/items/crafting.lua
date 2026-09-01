@@ -1,5 +1,5 @@
 -- Pfade ggf. an deine Projektstruktur anpassen (z.B. "main.items", "data.items", ...)
-local items = require("objects.items")
+local items = require("things.items.item")
 
 local M = {}
 

@@ -50,6 +50,6 @@ embedded_components {
 embedded_components {
   id: "factory"
   type: "factory"
-  data: "prototype: \"/objects/item.go\"\n"
+  data: "prototype: \"/things/items/item.go\"\n"
   ""
 }

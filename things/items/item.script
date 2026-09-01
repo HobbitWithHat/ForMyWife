@@ -1,4 +1,4 @@
-local item_db = require "objects.items"
+local item_db = require "things.items.item"
 
 go.property("item_id", hash(""))
 
@@ -16,6 +16,7 @@ function init(self)
 	
 	-- Sprite setzen
 	sprite.play_flipbook("#sprite", self.data.sprite)
+	print("Item-URL: " .. msg.url())
 end
 
 function final(self)

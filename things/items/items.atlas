@@ -1,0 +1,19 @@
+images {
+  image: "/assets/icons/axe.png"
+}
+images {
+  image: "/assets/icons/stick.png"
+}
+images {
+  image: "/assets/icons/bone.png"
+}
+images {
+  image: "/assets/icons/fiber.png"
+}
+images {
+  image: "/assets/icons/stone.png"
+}
+images {
+  image: "/assets/icons/none.png"
+}
+extrude_borders: 2
