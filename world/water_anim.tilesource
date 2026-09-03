@@ -1,0 +1,173 @@
+image: "/assets/environments/formywife_wateranim.png"
+tile_width: 16
+tile_height: 16
+collision_groups: "default"
+animations {
+  id: "land_b"
+  start_tile: 61
+  end_tile: 64
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_bl"
+  start_tile: 21
+  end_tile: 24
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_br"
+  start_tile: 111
+  end_tile: 114
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_cbl"
+  start_tile: 51
+  end_tile: 54
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_cbr"
+  start_tile: 81
+  end_tile: 84
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_ctl"
+  start_tile: 41
+  end_tile: 44
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_ctr"
+  start_tile: 71
+  end_tile: 74
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_l"
+  start_tile: 11
+  end_tile: 14
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_r"
+  start_tile: 101
+  end_tile: 104
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_t"
+  start_tile: 31
+  end_tile: 34
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_tl"
+  start_tile: 1
+  end_tile: 4
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "land_tr"
+  start_tile: 91
+  end_tile: 94
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_b"
+  start_tile: 67
+  end_tile: 70
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_bl"
+  start_tile: 27
+  end_tile: 30
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_br"
+  start_tile: 117
+  end_tile: 120
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_cbl"
+  start_tile: 57
+  end_tile: 60
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_cbr"
+  start_tile: 87
+  end_tile: 90
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_ctl"
+  start_tile: 47
+  end_tile: 50
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_ctr"
+  start_tile: 77
+  end_tile: 80
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_l"
+  start_tile: 17
+  end_tile: 20
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_r"
+  start_tile: 107
+  end_tile: 110
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_t"
+  start_tile: 37
+  end_tile: 40
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_tl"
+  start_tile: 7
+  end_tile: 10
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+animations {
+  id: "sea_tr"
+  start_tile: 97
+  end_tile: 100
+  playback: PLAYBACK_LOOP_PINGPONG
+  fps: 4
+}
+extrude_borders: 2
