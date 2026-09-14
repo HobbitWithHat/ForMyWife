@@ -8,7 +8,7 @@ embedded_instances {
 embedded_instances {
   id: "map"
   data: "components {\n"
-  "  id: \"test 0 1\"\n"
+  "  id: \"1 0\"\n"
   "  component: \"/world/maps/1 0.tilemap\"\n"
   "}\n"
   "embedded_components {\n"
