@@ -23,14 +23,14 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("show_hands") then
 		
-		if message.right then
+		if message.right.sprite then
 			gui.play_flipbook(self.right, message.right.sprite)
 			print(message.right.sprite)
 		else
 			gui.play_flipbook(self.right, "none")
 		end
 		
-		if message.left then
+		if message.left.sprite then
 			gui.play_flipbook(self.left, message.left.sprite)
 			print(message.left.sprite)
 		else
