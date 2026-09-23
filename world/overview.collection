@@ -95,4 +95,20 @@ collection_instances {
     y: -960.0
   }
 }
+collection_instances {
+  id: "1 1"
+  collection: "/world/screens/1 1.collection"
+  position {
+    x: 640.0
+    y: 480.0
+  }
+}
+collection_instances {
+  id: "2 1"
+  collection: "/world/screens/2 1.collection"
+  position {
+    x: 1280.0
+    y: 480.0
+  }
+}
 scale_along_z: 0
