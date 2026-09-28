@@ -1,19 +1,13 @@
-# Welcome to Defold
+Island Adventure
+===============
 
-This project was created from the "desktop" project template. This means that the settings in ["game.project"](defold://open?path=/game.project) have been changed to be suitable for a desktop game:
+This is a small game I'm making, to Train coding and game development.
+My Goal is to make a small, cute and cozy game About a tribe Living on a small Island. Maybe low Survival aspects, but really just for the fasion.
 
-- The screen size is set to 1280x720
-- Projection is set to Fixed Fit
-- macOS and Windows icons are set
-- Mouse clicks are bound to action "touch"
-- A simple script in a game object is set up to receive and react to input
+# Features
+1. A zelda-like, open world to explore.
+2. Small and cute discoveries that reward the Player for traversing the world
+3. A Crafting System used for small puzzles
+4. A System for showing text, used to read signs and talk to NPCs.
+5. A Small, Exploration driven Story.
 
-[Build and run](defold://project.build) to see it in action. You can of course alter these settings to fit your needs.
-
-Check out [the documentation pages](https://defold.com/learn) for examples, tutorials, manuals and API docs.
-
-If you run into trouble, help is available in [our forum](https://forum.defold.com).
-
-Happy Defolding!
-
----
