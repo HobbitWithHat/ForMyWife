@@ -1,0 +1,20 @@
+go.property("content", hash(""))
+
+local text = require("things.readables.texts")
+
+
+function init(self)
+	self.int = 1
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("interact") then
+		if text[self.content][self.int] then
+			msg.post("/hud#hud", "show_text", {type = hash("dialog"), content = text[self.content][self.int]})
+			self.int = self.int+1
+		else
+			msg.post("/hud#hud", "hide_text")
+			self.int = 1
+		end
+	end
+end

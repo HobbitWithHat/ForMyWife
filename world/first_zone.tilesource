@@ -1900,7 +1900,7 @@ convex_hulls {
 convex_hulls {
   index: 763
   count: 9
-  collision_group: ""
+  collision_group: "world"
 }
 convex_hulls {
   index: 772

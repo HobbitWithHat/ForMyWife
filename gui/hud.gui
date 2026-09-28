@@ -71,8 +71,8 @@ nodes {
 }
 nodes {
   size {
-    x: 200.0
-    y: 100.0
+    x: 360.0
+    y: 70.0
   }
   color {
     x: 0.0
@@ -83,6 +83,7 @@ nodes {
   text: "testtext"
   font: "always_on_top"
   id: "text"
+  line_break: true
   parent: "textbox"
   inherit_alpha: true
 }

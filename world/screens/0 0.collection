@@ -51,6 +51,23 @@ instances {
     z: 0.1
   }
 }
+instances {
+  id: "readable"
+  prototype: "/things/readables/readable.go"
+  position {
+    x: 375.0
+    y: 87.0
+    z: 0.1
+  }
+  component_properties {
+    id: "readable"
+    properties {
+      id: "content"
+      value: "village"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "root"
@@ -59,6 +76,7 @@ embedded_instances {
   children: "item1"
   children: "map"
   children: "npc"
+  children: "readable"
   data: ""
 }
 embedded_instances {

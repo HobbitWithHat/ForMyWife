@@ -1,8 +1,77 @@
 name: "4 -1"
+instances {
+  id: "readable"
+  prototype: "/things/readables/readable.go"
+  position {
+    x: 248.0
+    y: 248.0
+    z: 0.1
+  }
+  component_properties {
+    id: "readable"
+    properties {
+      id: "content"
+      value: " beach"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "stone"
+  prototype: "/things/items/item.go"
+  position {
+    x: 139.0
+    y: 212.0
+  }
+  component_properties {
+    id: "item"
+    properties {
+      id: "item_id"
+      value: "stone"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "stone1"
+  prototype: "/things/items/item.go"
+  position {
+    x: 175.0
+    y: 212.0
+  }
+  component_properties {
+    id: "item"
+    properties {
+      id: "item_id"
+      value: "stone"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
+instances {
+  id: "stone2"
+  prototype: "/things/items/item.go"
+  position {
+    x: 86.0
+    y: 154.0
+  }
+  component_properties {
+    id: "item"
+    properties {
+      id: "item_id"
+      value: "stone"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "root"
   children: "map"
+  children: "readable"
+  children: "stone"
+  children: "stone1"
+  children: "stone2"
   data: ""
 }
 embedded_instances {
