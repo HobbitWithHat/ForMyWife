@@ -150,4 +150,33 @@ collection_instances {
     y: 2400.0
   }
 }
+collection_instances {
+  id: "0 4"
+  collection: "/world/screens/0 4.collection"
+  position {
+    y: 1920.0
+  }
+}
+collection_instances {
+  id: "0 6"
+  collection: "/world/screens/0 6.collection"
+  position {
+    y: 2880.0
+  }
+}
+collection_instances {
+  id: "0 7"
+  collection: "/world/screens/0 7.collection"
+  position {
+    y: 3360.0
+  }
+}
+collection_instances {
+  id: "-1 6"
+  collection: "/world/screens/-1 6.collection"
+  position {
+    x: -640.0
+    y: 2880.0
+  }
+}
 scale_along_z: 0
