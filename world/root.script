@@ -5,5 +5,10 @@
 -- Hier kannst du später Screen-spezifische Init-Logik unterbringen.
 
 function init(self)
-	-- z.B. Umgebungs-Sound starten, Wetter setzen, etc.
+	sound.play("root#overworld")
+	sound.play("root#waves")
+end
+
+function final(self)
+	sound.stop("root#waves")
 end
