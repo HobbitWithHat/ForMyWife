@@ -4,8 +4,8 @@ function init(self)
 	self.textbox = gui.get_node("textbox")
 	self.text = gui.get_node("text")
 
-	gui.set_visible(self.textbox, false)
-	gui.set_visible(self.text, false)
+	gui.set_visible(self.textbox, true)
+	gui.set_visible(self.text, true)
 end
 
 function final(self)
@@ -37,14 +37,20 @@ function on_message(self, message_id, message, sender)
 			gui.play_flipbook(self.left, "none")
 		end
 
+	elseif message_id == hash("default_text") then
+		self.default = message.area
+		gui.set_text(self.text, self.default)
+		
+
 	elseif message_id == hash("show_text") then
 		gui.set_text(self.text, message.content)
-		gui.set_visible(self.textbox, true)
-		gui.set_visible(self.text, true)
+		--gui.set_visible(self.textbox, true)
+		--gui.set_visible(self.text, true)
 
 	elseif message_id == hash("hide_text") then
-		gui.set_visible(self.text, false)
-		gui.set_visible(self.textbox, false)
+		gui.set_text(self.text, self.default)
+		--gui.set_visible(self.text, false)
+		--gui.set_visible(self.textbox, false)
 	end
 end
 

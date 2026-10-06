@@ -148,7 +148,6 @@ nodes {
   id: "top"
   layer: "background"
   inherit_alpha: true
-  alpha: 0.5
   size_mode: SIZE_MODE_AUTO
 }
 layers {
