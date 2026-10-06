@@ -1,4 +1,5 @@
 go.property("destination", vmath.vector3(0, 0, 0))
+go.property("direction", hash(""))
 
 function init(self)
 	-- Add initialization code here
@@ -35,7 +36,7 @@ end
 
 function on_message(self, message_id, message, sender)
 	if message_id == hash("interact") then
-		msg.post(sender, "teleport", { dest = self.destination } )
+		msg.post(sender, "teleport", { dest = self.destination, dir = self.direction } )
 	end
 end
 

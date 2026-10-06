@@ -1,3 +1,7 @@
+components {
+  id: "teleporter"
+  component: "/things/teleport/teleporter.script"
+}
 embedded_components {
   id: "collisionobject"
   type: "collisionobject"
@@ -26,11 +30,11 @@ embedded_components {
 embedded_components {
   id: "sprite"
   type: "sprite"
-  data: "default_animation: \"spear\"\n"
+  data: "default_animation: \"Objekt\"\n"
   "material: \"/builtins/materials/sprite.material\"\n"
   "textures {\n"
   "  sampler: \"texture_sampler\"\n"
-  "  texture: \"/things/items/objects.tilesource\"\n"
+  "  texture: \"/main/sprites.atlas\"\n"
   "}\n"
   ""
 }

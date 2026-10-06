@@ -150,6 +150,7 @@ function on_message(self, message_id, message, sender)
 
 	elseif message_id == hash("teleport") then
 		print("teleport to: " .. message.dest)
+		sprite.play_flipbook("#sprite", message.dir)
 		go.set_position(message.dest)
 		
 	-- Erkennt, wenn Spieler mit Objekt kollidiert, bzw. Kollision endet

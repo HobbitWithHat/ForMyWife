@@ -68,6 +68,28 @@ instances {
     }
   }
 }
+instances {
+  id: "teleporter"
+  prototype: "/things/teleport/teleporter.go"
+  position {
+    x: 472.09583
+    y: 79.87355
+    z: 0.1
+  }
+  component_properties {
+    id: "teleporter"
+    properties {
+      id: "destination"
+      value: "400.0, 200.0, 0.0"
+      type: PROPERTY_TYPE_VECTOR3
+    }
+    properties {
+      id: "direction"
+      value: "idle_right"
+      type: PROPERTY_TYPE_HASH
+    }
+  }
+}
 scale_along_z: 0
 embedded_instances {
   id: "root"
