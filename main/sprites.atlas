@@ -1,10 +1,13 @@
 images {
-  image: "/assets/placeholder/Eingang.png"
+  image: "/assets/sprites/Eingang.png"
 }
 images {
-  image: "/assets/placeholder/Objekt.png"
+  image: "/assets/sprites/Objekt.png"
 }
 images {
-  image: "/assets/placeholder/Spieler.png"
+  image: "/assets/sprites/Spieler.png"
+}
+images {
+  image: "/assets/sprites/sign.png"
 }
 extrude_borders: 2

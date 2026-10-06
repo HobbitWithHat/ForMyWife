@@ -14,14 +14,15 @@ textures {
 nodes {
   position {
     x: 32.0
-    y: 32.0
+    y: 525.0
   }
   size {
-    x: 32.0
-    y: 32.0
+    x: 48.0
+    y: 48.0
   }
   type: TYPE_BOX
   id: "left"
+  layer: "nodes"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -36,14 +37,15 @@ nodes {
 nodes {
   position {
     x: 608.0
-    y: 32.0
+    y: 525.0
   }
   size {
-    x: 32.0
-    y: 32.0
+    x: 48.0
+    y: 48.0
   }
   type: TYPE_BOX
   id: "right"
+  layer: "nodes"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -58,7 +60,7 @@ nodes {
 nodes {
   position {
     x: 320.0
-    y: 60.0
+    y: 543.0
   }
   size {
     x: 400.0
@@ -66,6 +68,7 @@ nodes {
   }
   type: TYPE_BOX
   id: "textbox"
+  layer: "nodes"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -102,7 +105,8 @@ nodes {
     z: 0.0
   }
   type: TYPE_BOX
-  id: "box"
+  id: "side_l"
+  layer: "background"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
 }
@@ -121,9 +125,37 @@ nodes {
     z: 0.0
   }
   type: TYPE_BOX
-  id: "box1"
+  id: "side_r"
+  layer: "background"
   inherit_alpha: true
   size_mode: SIZE_MODE_AUTO
+}
+nodes {
+  position {
+    x: 320.0
+    y: 560.0
+  }
+  size {
+    x: 640.0
+    y: 160.0
+  }
+  color {
+    x: 0.2
+    y: 0.4
+    z: 0.2
+  }
+  type: TYPE_BOX
+  id: "top"
+  layer: "background"
+  inherit_alpha: true
+  alpha: 0.5
+  size_mode: SIZE_MODE_AUTO
+}
+layers {
+  name: "background"
+}
+layers {
+  name: "nodes"
 }
 material: "/builtins/materials/gui.material"
 adjust_reference: ADJUST_REFERENCE_PARENT
