@@ -72,7 +72,16 @@ embedded_instances {
   children: "stone"
   children: "stone1"
   children: "stone2"
-  data: ""
+  data: "components {\n"
+  "  id: \"root\"\n"
+  "  component: \"/world/root.script\"\n"
+  "  properties {\n"
+  "    id: \"area\"\n"
+  "    value: \"beach\"\n"
+  "    type: PROPERTY_TYPE_HASH\n"
+  "  }\n"
+  "}\n"
+  ""
 }
 embedded_instances {
   id: "map"

@@ -13,7 +13,9 @@ M = {
 	"They regrew the forest time and time again",
 	"But throughout all their talks, this remained their favourite spot"},
 
-	[hash("hut")] = {""}
+	[hash("hut")] = {""},
+
+	[hash("mforest")] = {""},
 }
 
 return M

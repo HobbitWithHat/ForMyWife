@@ -5,9 +5,7 @@ function init(self)
 	sound.play("root#overworld")
 	sound.play("root#waves")
 
-	local name = area_db[self.area]
-	print("Gebiet: ", name)
-	
+	local name = area_db[self.area]	
 	msg.post("/hud#hud", "default_text", {area = name} )
 	
 end

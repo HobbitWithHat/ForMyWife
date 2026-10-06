@@ -10,7 +10,8 @@ M = {
 	[hash("hill")] = "Berg",
 	[hash("ruin")] = "Ruinen",
 	[hash("volcano")] = "Vulkan",
-	[hash("giant")] = "Protestriese"
+	[hash("giant")] = "Protestriese",
+	[hash("sky")] = "Himmelswiese",
 }
 
 
