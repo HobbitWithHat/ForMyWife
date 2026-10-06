@@ -41,16 +41,22 @@ end
 function on_message(self, message_id, message, sender)
 	if message_id == hash("contact_point_response") then
 		vmath.normalize(message.normal)
-		if message.normal.x > 0 then
-			sprite.play_flipbook("#sprite", hash("idle_left"))
-		elseif message.normal.x < 0 then
-			sprite.play_flipbook("#sprite", hash("idle_right"))
-		elseif message.normal.y > 0 then
-			sprite.play_flipbook("#sprite", hash("idle_down"))
-		elseif message.normal.y < 0 then
-			sprite.play_flipbook("#sprite", hash("idle_up"))
+		msg.post("/hud#hud", "show_text", {content = "Kupeke"})
+			if message.normal.x > 0 then
+				sprite.play_flipbook("#sprite", hash("idle_left"))
+			elseif message.normal.x < 0 then
+				sprite.play_flipbook("#sprite", hash("idle_right"))
+			elseif message.normal.y > 0 then
+				sprite.play_flipbook("#sprite", hash("idle_down"))
+			elseif message.normal.y < 0 then
+				sprite.play_flipbook("#sprite", hash("idle_up"))
 		end
-		
+	end
+
+		if message_id == hash("trigger_response") then
+			if message.enter == false then
+			msg.post("/hud#hud", "hide_text")
+		end
 
 	elseif message_id == hash("interact") then
 		if npc.text[self.dia][self.int] then

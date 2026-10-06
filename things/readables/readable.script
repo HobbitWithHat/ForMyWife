@@ -8,7 +8,14 @@ function init(self)
 end
 
 function on_message(self, message_id, message, sender)
-	if message_id == hash("interact") then
+	if message_id == hash("trigger_response") then
+		if message.enter == true then
+			msg.post("/hud#hud", "show_text", { content = "Sign" })
+		else
+			msg.post("/hud#hud", "hide_text")
+		end
+	
+	elseif message_id == hash("interact") then
 		if text[self.content][self.int] then
 			msg.post("/hud#hud", "show_text", {type = hash("dialog"), content = text[self.content][self.int]})
 			self.int = self.int+1

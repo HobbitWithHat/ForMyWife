@@ -1,9 +1,3 @@
--- screen_root.script
--- Dieses Script sitzt auf dem GO namens "root" in jeder Screen-Collection.
--- Aktuell braucht es keinen eigenen Code – die Position wird vom
--- world_manager direkt per go.animate gesetzt.
--- Hier kannst du später Screen-spezifische Init-Logik unterbringen.
-
 go.property("area", hash(""))
 local area_db = require "world.areas"
 
